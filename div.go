@@ -68,6 +68,11 @@ func main() {
 		return
 	}
 
+	for i := 0; i <= 2; i = i + 1 {
+		if result[i] < 0 {
+			result[i] = (-result[i])
+		}
+	}
 	fmt.Printf("Input: %v\n", nums)
 	fmt.Printf("Ouput: %v\n", result)
 }

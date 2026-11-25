@@ -1,3 +1,3 @@
-module cie1931
+module CIE1931Converter
 
 go 1.26.11
