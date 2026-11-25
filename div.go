@@ -19,7 +19,7 @@ var (
 	errZeroSum = errors.New("X+Y+Z 为 0，无法归一化")
 )
 
-func sub(n []float64) ([]float64, error) {
+func div(n []float64) ([]float64, error) {
 	if len(n) != vecLen {
 		return nil, errVecLen
 	}
@@ -41,11 +41,11 @@ func main() {
 	// os.Args[0] Binary Path，From Terminal in os.Args[1:]
 	args := os.Args[1:]
 	if len(args) == 0 {
-		fmt.Println("Please Input a Number eg: go run sub.go 3 7 2")
+		fmt.Println("Please Input a Number eg: go run div.go 3 7 2")
 		return
 	}
 
-	// Input is slice，so collect all legal parameters first，then pass to sub
+	// Input is slice，so collect all legal parameters first，then pass to div
 	nums := make([]float64, 0, len(args))
 	for _, arg := range args {
 		num, err := strconv.ParseFloat(arg, 64)
@@ -62,7 +62,7 @@ func main() {
 		return
 	}
 
-	result, err := sub(nums)
+	result, err := div(nums)
 	if err != nil {
 		fmt.Println("Calculating Fault:", err)
 		return
